@@ -1,22 +1,29 @@
 var inputNumber = function(number) {
-  if (number % 3 === 0) {
-    return "ping" + "<br>";
-  } else if (number % 5 === 0) {
-    return "pong" + "<br>";
-  } else if (number % 15 === 0) {
-    return "pingpong" + "<br>";
-  } else {
-    return "try again" + "<br>";
+  var array = []
+  for (var i = 1; i <= number; i ++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      array.push("pingpong");
+    } else if (i % 3 === 0) {
+      array.push("ping");
+    } else if (i % 3 === 0) {
+      array.push("pong");
+    } else {
+    array.push(i);
+    }
   }
+  return array;
 };
 
 $(document).ready(function() {
   $("form#input-number").submit(function(event) {
-    event.preventDefault();
+
     var number = parseInt($("input#number").val());
-    var result = inputNumber(number);
-    $("#result").prepend(result);
+    var pingPongResult = inputNumber(number);
+    pingPongResult.forEach(function(i) {
+      $("#input-number").append("<li>" + i + "</li>");
+    });
+    $(".result").show()
+
+    event.preventDefault();
   });
 });
-
-+ "<br>"
