@@ -1,0 +1,15 @@
+.container {
+  padding: 50px;
+  padding-top: 10px;
+  background-color: lightblue;
+  color: black;
+  margin: auto;
+  width: 100%;
+  margin-top: 20px;
+  visibility: visible;
+
+}
+
+.jumbotron {
+  text-align: center;
+}
